@@ -251,7 +251,7 @@ void setupOTA()
 
 void setup()
 {
-    pinMode(LED_BUILTIN, OUTPUT);
+    pinMode(PIN_LED_BUILTIN, OUTPUT);
 
     Serial.begin(115200);
 
@@ -340,7 +340,7 @@ void loop()
 
     case StateMqttConnect:
       Serial.println("StateMqttConnect:");
-      digitalWrite(LED_BUILTIN, HIGH); // off
+      digitalWrite(PIN_LED_BUILTIN, HIGH); // off
 
       waterMeter.enableMqtt(false);
 
@@ -390,7 +390,7 @@ void loop()
           mqttSubscribe();
           
           ControlState = StateOperating;
-          digitalWrite(LED_BUILTIN, LOW); // on
+          digitalWrite(PIN_LED_BUILTIN, LOW); // on
           Serial.println("StateOperating:");
           //mqttDebug("up and running");
         }
